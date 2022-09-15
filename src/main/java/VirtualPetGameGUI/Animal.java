@@ -13,7 +13,7 @@ package VirtualPetGameGUI;
 public abstract class Animal {
    
     //initialise all variable statistics for animal
-    public String animalName = "hello";
+    public String animalName = "";
     public String colour = "";
     public int happiness = 0;
     public int hunger = 0;
