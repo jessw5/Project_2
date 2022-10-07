@@ -4,6 +4,8 @@
  */
 package VirtualPetGameGUI;
 
+import Animals.Animal;
+
 /**
  *
  * @author jessi

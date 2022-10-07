@@ -7,6 +7,7 @@ package VirtualPetGameGUI;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.Collections;
 import javax.swing.*;
 
 
@@ -53,6 +54,7 @@ public class Panel extends JPanel{
     JTextArea gamePlayers = new JTextArea();
     gamePlayers.append("Player: " + user.getUsername() + " Score: " + user.getScore()
                     + "\nHighest Score: " + user.getHighestScore());
+    //+ +Collections.max(super.list));
     this.add(gamePlayers);
     this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
     this.setFocusable(true);

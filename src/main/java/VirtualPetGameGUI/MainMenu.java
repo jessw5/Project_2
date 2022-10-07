@@ -4,6 +4,15 @@
  */
 package VirtualPetGameGUI;
 
+import GameOptions.Train;
+import GameOptions.Play;
+import GameOptions.Perform;
+import GameOptions.Feed;
+import GameOptions.Clean;
+import Animals.Rabbit;
+import Animals.Animal;
+import Animals.Dog;
+import Animals.Cat;
 import java.awt.Graphics;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,6 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import javax.swing.JFrame;
 
 
 
@@ -28,6 +38,7 @@ public class MainMenu extends javax.swing.JFrame {
    Animal pet;
    private final HashMap<String, PetUser> users;
    private final String fileName;
+   private static JFrame frame = new JFrame();
    
     /**
      * Creates new form MainMenu
@@ -119,6 +130,8 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -265,12 +278,26 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setText("ChoosePet");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,7 +351,7 @@ public class MainMenu extends javax.swing.JFrame {
                                         .addGap(62, 62, 62)
                                         .addComponent(animalComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(petText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                                 .addComponent(jLabel4)
                                 .addGap(46, 46, 46))
                             .addGroup(layout.createSequentialGroup()
@@ -334,9 +361,13 @@ public class MainMenu extends javax.swing.JFrame {
                                         .addGap(26, 26, 26)
                                         .addComponent(menuButton))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(200, 200, 200)
-                                        .addComponent(TitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGap(46, 46, 46)
+                                        .addComponent(jButton5)
+                                        .addGap(79, 79, 79)
+                                        .addComponent(TitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jButton4)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton3))
@@ -347,8 +378,16 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(TitleLabel)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(TitleLabel)
+                                    .addComponent(jButton4)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(helloLabel)
                             .addComponent(menuButton))
@@ -399,6 +438,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
@@ -412,7 +452,7 @@ public class MainMenu extends javax.swing.JFrame {
         //ImageIcon dogIcon = new ImageIcon("images/dog image.jpg");
         if("Dog".equals(animalComboBox.getSelectedItem().toString())){
             petText.setText("Congratulations! You chose a Pet Dog!");
-            petTextArea.setText("              _=,_\n" +
+            petTextArea.setText("                     _=,_\n" +
                                        "           o_/6 /#\\\n" +
                                        "           \\__ |##/\n" +
                                        "            ='|--\\\n" +
@@ -677,7 +717,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-       if("enter name".equals(jTextField3.getText())){
+        if("enter name".equals(jTextField3.getText())){
            jTextArea2.setText("Please enter a player name!");
        }else{
        PetUser user = new PetUser(jTextField3.getText(), pet.getPetScore());
@@ -691,6 +731,19 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         new MainMenu().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        new AdoptPetGUI().setVisible(true);
+        frame.setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        new IntroductionFrame().setVisible(true);
+        frame.setVisible(false);
+      
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -719,9 +772,14 @@ public class MainMenu extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+    
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new MainMenu().setVisible(true);
+           // JFrame frame = new JFrame();
+            
+            frame = new MainMenu();
+            frame.setVisible(true);
+           // new MainMenu().setVisible(true);
         });
     }
 
@@ -733,6 +791,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
