@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Oct 24 16:43:55 NZDT 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0184-0816-fd31-00000d9de340 
+on database directory C:\Users\jessi\OneDrive\Desktop\Comp603- Program design and construction\Assignment 2\Project2_Group5\VirtualPetGame_Ebd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5acf9800 
+Loaded from file:/C:/Users/jessi/OneDrive/Desktop/Comp603-%20Program%20design%20and%20construction/Assignment%202/Project2_Group5/derby/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=17.0.2+8-LTS-86
+user.dir=C:\Users\jessi\OneDrive\Desktop\Comp603- Program design and construction\Assignment 2\Project2_Group5
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
